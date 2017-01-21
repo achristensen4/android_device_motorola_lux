@@ -57,7 +57,7 @@ on early-init
 on fs
     #Mount customize partion
     wait /dev/block/platform/msm_sdcc.1/by-name/customize
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/customize /customize rw discard nosuid nodev noatime nodiratime
 
 # When property ro.boot.num-sims is set
 on property:ro.boot.num-sims=1
