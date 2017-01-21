@@ -1,22 +1,16 @@
-# ActivityManager optimizations
-ro.config.max_starting_bg=8
-ro.sys.fw.bservice_enable=true
-ro.sys.fw.bservice_limit=5
-ro.sys.fw.bservice_age=5000
-
 # Audio
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=false
 tunnel.audio.encode=false
-av.offload.enable=true
+av.offload.enable=false
 av.streaming.offload.enable=true
 audio.offload.buffer.size.kb=64
 audio.offload.min.duration.secs=30
 audio.offload.gapless.enabled=true
 audio.offload.pcm.16bit.enable=false
-audio.offload.pcm.24bit.enable=true
+audio.offload.pcm.24bit.enable=false
 use.voice.path.for.pcm.voip=true
 vidc.enc.narrow.searchrange=1
 
@@ -28,13 +22,13 @@ qcom.bt.le_dev_pwr_class=1
 bluetooth.hfp.client=1
 
 # Dexopt - limit to 4 cores
-ro.sys.fw.dex2oat_thread_count=4
+ro.sys.fw.dex2oat_thread_count=1
 
 # Display
 debug.sf.hw=1
 debug.egl.hw=1
 persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.logs=0
+debug.mdpcomp.logs=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 debug.enable.sglscale=1
@@ -110,23 +104,22 @@ rild.libargs=-d /dev/smd0
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
-persist.radio.no_wait_for_card=1
+persist.radio.no_wait_for_card=0
 persist.radio.relay_oprt_change=1
 persist.radio.dfr_mode_set=1
 persist.qcril_uim_vcc_feature=1
 persist.radio.msgtunnel.start=true
 persist.radio.oem_ind_to_both=false
-persist.sys.ssr.restart_level=ALL_ENABLE
 persist.sys.qc.sub.rdump.on=1
 persist.data.qmi.adb_logmask=0
 persist.sys.qc.sub.rdump.max=3
 persist.radio.mot_ecc_custid=emea
 persist.radio.mot_ecc_enabled=1
 persist.radio.multisim.config=dsds
-persist.radio.force_get_pref=1
+persist.radio.force_get_pref=0
 persist.radio.plmn_name_cmp=1
 persist.radio.process_sups_ind=0
-ro.gsm.data_retry_config=default_randomization=2000,max_retries=infinite,1000,1000,80000,125000,485000,905000
+ro.gsm.data_retry_config=default_randomization=2000,2000,2000,2000
 DEVICE_PROVISIONED=1
 persist.radio.mcfg_enabled=1
 persist.radio.multi_mbns=nz2deg.mbn;apac_default.mbn
@@ -136,7 +129,7 @@ ro.fsg-id=emea_dsds
 persist.timed.enable=true
 
 #Trim properties
-ro.sys.fw.use_trim_settings=true
+ro.sys.fw.use_trim_settings=false
 ro.sys.fw.empty_app_percent=50
 ro.sys.fw.trim_empty_percent=100
 ro.sys.fw.trim_cache_percent=100
