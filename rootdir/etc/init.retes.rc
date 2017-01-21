@@ -1,4 +1,4 @@
 on early-init
     setprop ro.product.locale.language en
-    setprop ro.product.locale.region EN
+    setprop ro.product.locale.region USA
 
